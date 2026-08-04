@@ -32,6 +32,7 @@ All projects target maximum interoperability with common transceivers and keyers
 ## What it is
 
 A **capacitive-touch iambic paddle** implemented with two single-key capacitive touch ICs and two MOSFET outputs that pull the radio key lines to ground (like a conventional paddle).
+This key is based off of the excellent work of M0UKD project for a Capacitive CW Touch key: https://m0ukd.com/homebrew/capacitive-cw-touch-key-circuits/
 
 ## Key features
 
@@ -89,33 +90,24 @@ Some radios/keyers provide pull-ups on TIP/RING. With the current Touch architec
 
 ## What it is
 
-A **single-button straight key** designed for maximum simplicity and compatibility.
+A **single-button straight key** designed for maximum simplicity and compatibility. Its extremely light weight and durable. It uses standard keyboard parts which makes it easy to repair and give a long lifetime.
 
-## Recommended wiring to TRS
+## Wiring to TRS
 
 For broad compatibility with rigs that treat TRS as a paddle input:
 
 * **Sleeve (S) → GND**
 * **Tip (T) → Key line**
-* **Ring (R) → Not connected** (optional jumper to Tip if you want “try both” behavior)
+* **Ring (R) → Not connected** (optional jumper if you find your radio doesn't follow the standard.)
 
 Button wiring:
 
 * One side of the button → **Tip**
 * Other side of the button → **Sleeve (GND)**
 
-### “Most universal” option (recommended)
-
-Add a **3-pad solder jumper** to select whether the button keys **Tip** or **Ring**. Default to **Tip**.
-
 ## Power
 
 None required. This is a passive closure to ground.
-
-## Notes
-
-* Use a **ground plane freely** in this design; it improves return path and EMI immunity.
-* Keep TRS routing short; optionally add ESD near the connector.
 
 ---
 
@@ -123,52 +115,23 @@ None required. This is a passive closure to ground.
 
 ## What it is
 
-A “double-tap” variant intended to provide a compact or trainer-friendly workflow. (There are multiple ways to implement this; the repo can support one or more.)
+An iambic key using standard mechianical keyboard parts which make it extremely light weight and durable.
 
-## Common implementation directions
+## Wiring to TRS
 
-Choose one direction and document it clearly:
+For broad compatibility with rigs that treat TRS as an iambic paddle input:
 
-### Option A: Two-button straight key (recommended simplest)
+* **Sleeve (S) → GND**
+* **Tip (T) → Key 1 Line**
+* **Ring (R) → Key 2 Line**
 
-* Button A = DIT (Tip)
-* Button B = DAH (Ring)
-* Passive switch-only design; no battery required.
+Switch wiring:
 
-### Option B: One-button timing logic (advanced)
+* Allows you to flip Key 1 and Key 2 wiring to the TRS connector
 
-* Single button; firmware interprets short vs long press (dit vs dah) or double-tap patterns.
-* Requires a microcontroller and power.
+## Power
 
-## Recommendation
-
-If you want “simple and universal” like Chickadee Tap:
-
-* Prefer **Option A** (two mechanical buttons → Tip/Ring to GND)
-
----
-
-# Repo structure suggestion
-
-```
-/Chickadee-Touch/
-  README.md
-  hardware/
-    Chickadee-Touch.kicad_sch
-    Chickadee-Touch.kicad_pcb
-    gerbers/
-  docs/
-
-/Chickadee-Tap/
-  README.md
-  hardware/
-  docs/
-
-/Chickadee-DoubleTap/
-  README.md
-  hardware/
-  docs/
-```
+None required. This is a passive closure to ground.
 
 ---
 
@@ -186,15 +149,6 @@ Most modern rigs and external keyers treat paddle inputs as:
 
 ---
 
-# License
-
-Choose a license appropriate for your goals:
-
-* **CERN-OHL-S** or **CERN-OHL-P** (hardware-friendly)
-* **MIT** (if you want very permissive)
-
----
-
 # Contributing
 
 PRs welcome:
@@ -205,14 +159,3 @@ PRs welcome:
 * tested radio compatibility notes (rig model + settings)
 
 ---
-
-## TODO / Roadmap
-
-* **Touch v2:** true OFF isolation (prevent back-powering from TIP/RING when OFF)
-* Standardize TRS jack footprint alternatives (in-stock substitutions)
-* Add build photos + recommended enclosure ideas
-* Add a compatibility matrix (rigs tested + settings)
-
----
-
-If you want, tell me what you want **Tap** and **Double Tap** to be *exactly* (passive vs MCU, one button vs two, which TRS mapping), and I’ll tighten those sections so there are no “options” or ambiguity in the public README.
