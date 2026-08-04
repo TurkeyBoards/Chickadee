@@ -1,0 +1,6 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+J1,TRS-MidMount-PJ-399B-6A,1,~,C128994
+"MC1, MC2, MC3, MC4, MC5, MC6, MC7, MC8",MountingHole_2.2mm_M2_DIN965_Pad,8,~,
+"P1, P2",SolderWire-0.1sqmm_1x01_D0.4mm_OD1mm,2,~,
+"SW1, SW2",Kailh-Choc-Solder-Hotswap,2,~,
+U1,SW-SMD_6P-L9.0-W3.5-P2.50-LS6.8,1,HX MST-22D18G2-BD,C18357586
