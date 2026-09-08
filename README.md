@@ -12,8 +12,8 @@ This repo contains three small, TRS-connected Morse key projects designed for ha
 
 All projects target maximum interoperability with common transceivers and keyers using a **3.5mm TRS paddle/key input**.
 
-> **TRS convention (default):**
-> **Tip = DIT**, **Ring = DAH**, **Sleeve = GND**
+Fully Built & Tested Keys are available here:
+https://turkeyboards.com/collections/amature-radio
 
 ---
 
@@ -33,6 +33,9 @@ All projects target maximum interoperability with common transceivers and keyers
 
 A **capacitive-touch iambic paddle** implemented with two single-key capacitive touch ICs and two MOSFET outputs that pull the radio key lines to ground (like a conventional paddle).
 This key is based off of the excellent work of M0UKD project for a Capacitive CW Touch key: https://m0ukd.com/homebrew/capacitive-cw-touch-key-circuits/
+
+## Store Page
+https://turkeyboards.com/products/chickadee-touch-iambic-morse-code-key
 
 ## Key features
 
@@ -92,6 +95,9 @@ Some radios/keyers provide pull-ups on TIP/RING. With the current Touch architec
 
 A **single-button straight key** designed for maximum simplicity and compatibility. Its extremely light weight and durable. It uses standard keyboard parts which makes it easy to repair and give a long lifetime.
 
+## Store Page
+https://turkeyboards.com/products/chickadee-tap
+
 ## Wiring to TRS
 
 For broad compatibility with rigs that treat TRS as a paddle input:
@@ -116,6 +122,9 @@ None required. This is a passive closure to ground.
 ## What it is
 
 An iambic key using standard mechianical keyboard parts which make it extremely light weight and durable.
+
+## Store Page
+https://turkeyboards.com/products/chickadee-double-tap-iambic-morse-code-key
 
 ## Wiring to TRS
 
