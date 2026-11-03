@@ -12,33 +12,37 @@ The family currently includes:
 
 The Morse-key projects use standard 3.5 mm TRS key/paddle connections. The Chirp microphone projects use a 3.5 mm microphone/PTT connection with selectable wiring for compatibility with multiple portable radios.
 
-## Project inspiration and acknowledgements
+---
 
-Several Chickadee projects were inspired by excellent work already shared with the amateur-radio community.
+# Credits & Inspiration
 
-### Chickadee Touch
+Several Chickadee projects were inspired by excellent work shared openly with the amateur-radio community.
 
-The **Chickadee Touch** is based on the capacitive CW touch-key work of **M0UKD**.
+## M0UKD — Capacitive CW Touch Key
 
-M0UKD's original project and circuit documentation can be found here:
+The **Chickadee Touch** is based on and inspired by the capacitive CW touch-key work of **M0UKD**.
+
+Original project:
 
 https://m0ukd.com/homebrew/capacitive-cw-touch-key-circuits/
 
-His work provided the foundation for the capacitive sensing and solid-state CW keying approach used in the Chickadee Touch. The Chickadee implementation adapts that concept into the TurkeyBoards portable form factor and incorporates its own PCB layout, protection, power, enclosure, and production-oriented design decisions.
+M0UKD's work provided the foundation for the capacitive sensing and solid-state CW keying approach used in the Chickadee Touch.
+
+The Chickadee implementation adapts that concept into the TurkeyBoards portable form factor with its own PCB layout, power arrangement, protection circuitry, enclosure, and production-oriented design.
 
 Many thanks to **M0UKD** for documenting and sharing the original design with the amateur-radio community.
 
-### Chickadee Chirp and Chirp Mini
+## Adam, K6ARK — Mini Mic
 
-The **Chickadee Chirp** and **Chickadee Chirp Mini** are based on the excellent **K6ARK Mini Mic** project by Adam, K6ARK.
+The **Chickadee Chirp** and **Chickadee Chirp Mini** are based on and inspired by the excellent **K6ARK Mini Mic** project by Adam, K6ARK.
 
-The original K6ARK Mini Mic project is documented here:
+Original project:
 
 https://k6ark.com/mini-mic-build-instructions/
 
 K6ARK's design demonstrated an extremely compact and practical microphone/PTT solution for portable radios.
 
-The Chickadee Chirp family builds on that concept with TurkeyBoards' own mechanical design and adds a **selectable microphone/PTT wiring arrangement**, allowing a single microphone to work with multiple radio families that use different Tip/Ring assignments.
+The Chickadee Chirp family builds on that concept with TurkeyBoards' own mechanical design and adds a **selectable microphone/PTT wiring arrangement**, allowing one microphone to work with multiple radio families that use different Tip/Ring assignments.
 
 Many thanks to **Adam, K6ARK**, for publishing and sharing the original Mini Mic design and helping inspire these projects.
 
@@ -47,10 +51,6 @@ Many thanks to **Adam, K6ARK**, for publishing and sharing the original Mini Mic
 # Where to buy
 
 TurkeyBoards offers assembled versions of the Chickadee projects.
-
-**Collection / project reference:**
-
-https://m0ukd.com/homebrew/capacitive-cw-touch-key-circuits/
 
 **Chickadee Double Tap**
 
@@ -88,15 +88,15 @@ https://turkeyboards.com/products/chickadee-chirp-mini
 
 # Chickadee Touch
 
+<p align="center">
+  <img src="Chickadee-Touch/Images/Touch-1.JPG" alt="Chickadee Touch" width="32%">
+  <img src="Chickadee-Touch/Images/Touch-2.JPG" alt="Chickadee Touch" width="32%">
+  <img src="Chickadee-Touch/Images/Touch-3.JPG" alt="Chickadee Touch" width="32%">
+</p>
+
 ## What it is
 
 The **Chickadee Touch** is a capacitive-touch iambic paddle implemented with two single-key capacitive-touch controllers and two MOSFET outputs that pull the radio's key lines to ground, much like a conventional paddle.
-
-The design is based on the work of **M0UKD** and his Capacitive CW Touch Key project:
-
-https://m0ukd.com/homebrew/capacitive-cw-touch-key-circuits/
-
-The original M0UKD circuit provided the inspiration and core sensing concept. The Chickadee Touch adapts that approach into a compact TurkeyBoards design with its own PCB, power arrangement, protection circuitry, enclosure, and production-oriented layout.
 
 ## Key features
 
@@ -157,6 +157,10 @@ https://turkeyboards.com/products/chickadee-touch-iambic-morse-code-key
 
 # Chickadee Tap
 
+<p align="center">
+  <img src="Chickadee-Tap/Images/Tap-1.JPG" alt="Chickadee Tap" width="70%">
+</p>
+
 ## What it is
 
 The **Chickadee Tap** is a single-button straight Morse key designed for maximum simplicity and portability. It uses standard mechanical keyboard components, making it lightweight, durable, inexpensive, and easy to repair.
@@ -190,6 +194,11 @@ https://turkeyboards.com/products/chickadee-tap
 
 # Chickadee Double Tap
 
+<p align="center">
+  <img src="Chickadee-DoubleTap/Images/Chickadee%20Double%20Tap-1.jpg" alt="Chickadee Double Tap" width="48%">
+  <img src="Chickadee-DoubleTap/Images/Chickadee%20Double%20Tap-Group.jpg" alt="Chickadee Double Tap group" width="48%">
+</p>
+
 ## What it is
 
 The **Chickadee Double Tap** is a compact iambic Morse paddle using standard mechanical keyboard switches. The design combines very low weight with durable and easily replaceable switching components.
@@ -216,17 +225,17 @@ https://turkeyboards.com/products/chickadee-double-tap-iambic-morse-code-key
 
 # Chickadee Chirp
 
+<p align="center">
+  <img src="Chickadee-Chirp/Images/Chirp-1.jpg" alt="Chickadee Chirp" width="70%">
+</p>
+
 ## What it is
 
 The **Chickadee Chirp** is an ultra-portable push-to-talk microphone designed for portable amateur-radio operation.
 
-It is based on the excellent **K6ARK Mini Mic** project by Adam, K6ARK:
+It uses a compact electret microphone and a mechanical keyboard-switch PTT in a lightweight, field-serviceable package.
 
-https://k6ark.com/mini-mic-build-instructions/
-
-K6ARK's work demonstrated a simple and extremely compact microphone/PTT arrangement that is particularly well suited to portable radios.
-
-The Chickadee Chirp builds on that concept with TurkeyBoards' own mechanical design and adds a **built-in selector switch** that allows the microphone and PTT connections to be swapped between two common portable-radio wiring arrangements. This means one microphone can be used with several different radios without carrying separate adapters or rewiring cables.
+A built-in selector switch allows the microphone and PTT connections to be swapped between two common portable-radio wiring arrangements, allowing one microphone to work with several different radios without carrying separate adapters or rewiring cables.
 
 ## Key features
 
@@ -292,15 +301,17 @@ https://turkeyboards.com/products/chickadee-chirp
 
 # Chickadee Chirp Mini
 
+<p align="center">
+  <img src="Chickadee-Chirp-Mini/Images/Chirp-Mini-1.jpg" alt="Chickadee Chirp Mini" width="70%">
+</p>
+
 ## What it is
 
 The **Chickadee Chirp Mini** is the smallest version of the Chickadee portable microphone.
 
-It is also based on **Adam, K6ARK's Mini Mic project**:
+It carries the same basic functionality as the full-size Chirp in an even smaller TurkeyBoards form factor while retaining the selectable microphone/PTT wiring.
 
-https://k6ark.com/mini-mic-build-instructions/
-
-The Chirp Mini carries the same inspiration forward in an even smaller TurkeyBoards form factor while retaining the selectable microphone/PTT wiring introduced in the Chickadee Chirp. It is intended for operators who want to carry the smallest and lightest microphone practical. Like the full-size Chirp, it uses an electret microphone, mechanical keyboard-switch PTT, and selectable microphone/PTT wiring.
+It is intended for operators who want to carry the smallest and lightest microphone practical.
 
 ## Key features
 
@@ -415,24 +426,6 @@ The Chickadee family is built around a few common goals:
 * **Inexpensive to manufacture**
 * **Compatible with commonly available parts**
 
-Mechanical Chickadee products make extensive use of standard keyboard switches because they are inexpensive, readily available, provide excellent tactile feedback, have long service lives, and are easy to replace. The goal is to create radio accessories that are easy to throw into a field kit without adding unnecessary weight, complexity, or proprietary components.
+Mechanical Chickadee products make extensive use of standard keyboard switches because they are inexpensive, readily available, provide excellent tactile feedback, have long service lives, and are easy to replace.
 
----
-
-# Credits
-
-The Chickadee family would not exist in its current form without the work shared by other amateur-radio builders.
-
-**M0UKD**
-Capacitive CW Touch Key Circuits
-https://m0ukd.com/homebrew/capacitive-cw-touch-key-circuits/
-
-The Chickadee Touch is based on and inspired by M0UKD's capacitive-touch CW key work.
-
-**Adam, K6ARK**
-Mini Mic Build Instructions
-https://k6ark.com/mini-mic-build-instructions/
-
-The Chickadee Chirp and Chickadee Chirp Mini are based on and inspired by K6ARK's Mini Mic project.
-
-TurkeyBoards extends these ideas with its own PCB layouts, enclosures, production design, switching arrangements, protection circuitry, and other implementation changes. We are grateful to both builders for openly documenting and sharing their work with the amateur-radio community.
+The goal is to create radio accessories that are easy to throw into a field kit without adding unnecessary weight, complexity, or proprietary components.
