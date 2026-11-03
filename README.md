@@ -1,29 +1,88 @@
-Below is a **single Markdown document** you can drop into your public repo (e.g., `README.md` or `PROJECTS.md`). It’s written so you can keep **all three projects in one place** and link out to per-project folders later.
+# Chickadee Portable Radio Accessories
+
+The **Chickadee** family is a collection of small, durable amateur-radio accessories designed around portability, simplicity, repairability, and field use.
+
+The family currently includes:
+
+* **Chickadee Touch** — capacitive-touch iambic Morse paddle
+* **Chickadee Tap** — single-button straight Morse key
+* **Chickadee Double Tap** — mechanical iambic Morse paddle
+* **Chickadee Chirp** — ultra-portable PTT microphone
+* **Chickadee Chirp Mini** — extra-small ultra-portable PTT microphone
+
+The Morse-key projects use standard 3.5 mm TRS key/paddle connections. The Chirp microphone projects use a 3.5 mm microphone/PTT connection with selectable wiring for compatibility with multiple portable radios.
+
+## Project inspiration and acknowledgements
+
+Several Chickadee projects were inspired by excellent work already shared with the amateur-radio community.
+
+### Chickadee Touch
+
+The **Chickadee Touch** is based on the capacitive CW touch-key work of **M0UKD**.
+
+M0UKD's original project and circuit documentation can be found here:
+
+https://m0ukd.com/homebrew/capacitive-cw-touch-key-circuits/
+
+His work provided the foundation for the capacitive sensing and solid-state CW keying approach used in the Chickadee Touch. The Chickadee implementation adapts that concept into the TurkeyBoards portable form factor and incorporates its own PCB layout, protection, power, enclosure, and production-oriented design decisions.
+
+Many thanks to **M0UKD** for documenting and sharing the original design with the amateur-radio community.
+
+### Chickadee Chirp and Chirp Mini
+
+The **Chickadee Chirp** and **Chickadee Chirp Mini** are based on the excellent **K6ARK Mini Mic** project by Adam, K6ARK.
+
+The original K6ARK Mini Mic project is documented here:
+
+https://k6ark.com/mini-mic-build-instructions/
+
+K6ARK's design demonstrated an extremely compact and practical microphone/PTT solution for portable radios.
+
+The Chickadee Chirp family builds on that concept with TurkeyBoards' own mechanical design and adds a **selectable microphone/PTT wiring arrangement**, allowing a single microphone to work with multiple radio families that use different Tip/Ring assignments.
+
+Many thanks to **Adam, K6ARK**, for publishing and sharing the original Mini Mic design and helping inspire these projects.
 
 ---
 
-# Chickadee Morse Keys
+# Where to buy
 
-This repo contains three small, TRS-connected Morse key projects designed for ham radio use:
+TurkeyBoards offers assembled versions of the Chickadee projects.
 
-* **Chickadee Touch** — capacitive-touch iambic paddle (DIT/DAH)
-* **Chickadee Tap** — single-button straight key (tap)
-* **Chickadee Double Tap** — two-button / tap-driven key variant (double-tap workflow)
+**Collection / project reference:**
 
-All projects target maximum interoperability with common transceivers and keyers using a **3.5mm TRS paddle/key input**.
+https://m0ukd.com/homebrew/capacitive-cw-touch-key-circuits/
 
-> **TRS convention (default):**
-> **Tip = DIT**, **Ring = DAH**, **Sleeve = GND**
+**Chickadee Double Tap**
+
+https://turkeyboards.com/products/chickadee-double-tap-iambic-morse-code-key
+
+**Chickadee Tap**
+
+https://turkeyboards.com/products/chickadee-tap
+
+**Chickadee Touch**
+
+https://turkeyboards.com/products/chickadee-touch-iambic-morse-code-key
+
+**Chickadee Chirp**
+
+https://turkeyboards.com/products/chickadee-chirp
+
+**Chickadee Chirp Mini**
+
+https://turkeyboards.com/products/chickadee-chirp-mini
 
 ---
 
 ## Quick comparison
 
-| Project        | Input style                              | Intended use                      | Power                                            | TRS behavior                   |
-| -------------- | ---------------------------------------- | --------------------------------- | ------------------------------------------------ | ------------------------------ |
-| **Touch**      | Capacitive touch pads (iambic)           | Paddle keying (DIT/DAH)           | CR2032 + optional radio-harvest (when supported) | Tip=DIT, Ring=DAH              |
-| **Tap**        | Single momentary button                  | Straight keying                   | None (passive switch)                            | Tip keyed to GND (Ring unused) |
-| **Double Tap** | iambic | Trainer-friendly / compact keying | Depends on implementation                        | Typically Tip/Ring or Tip-only |
+| Project        | Input / Control Style                               | Intended Use                        | Power                           | Connection     |
+| -------------- | --------------------------------------------------- | ----------------------------------- | ------------------------------- | -------------- |
+| **Touch**      | Capacitive touch pads                               | Iambic CW paddle                    | CR2032 + optional radio-harvest | 3.5 mm TRS     |
+| **Tap**        | Single mechanical keyboard switch                   | Straight CW key                     | None                            | 3.5 mm TRS     |
+| **Double Tap** | Two mechanical keyboard switches                    | Iambic CW paddle                    | None                            | 3.5 mm TRS     |
+| **Chirp**      | Keyboard-switch PTT + electret microphone           | Portable voice operation            | None                            | 3.5 mm mic/PTT |
+| **Chirp Mini** | Miniature keyboard-switch PTT + electret microphone | Ultralight portable voice operation | None                            | 3.5 mm mic/PTT |
 
 ---
 
@@ -31,58 +90,68 @@ All projects target maximum interoperability with common transceivers and keyers
 
 ## What it is
 
-A **capacitive-touch iambic paddle** implemented with two single-key capacitive touch ICs and two MOSFET outputs that pull the radio key lines to ground (like a conventional paddle).
-This key is based off of the excellent work of M0UKD project for a Capacitive CW Touch key: https://m0ukd.com/homebrew/capacitive-cw-touch-key-circuits/
+The **Chickadee Touch** is a capacitive-touch iambic paddle implemented with two single-key capacitive-touch controllers and two MOSFET outputs that pull the radio's key lines to ground, much like a conventional paddle.
+
+The design is based on the work of **M0UKD** and his Capacitive CW Touch Key project:
+
+https://m0ukd.com/homebrew/capacitive-cw-touch-key-circuits/
+
+The original M0UKD circuit provided the inspiration and core sensing concept. The Chickadee Touch adapts that approach into a compact TurkeyBoards design with its own PCB, power arrangement, protection circuitry, enclosure, and production-oriented layout.
 
 ## Key features
 
 * **Two touch pads:** DIT + DAH
-* **3.5mm TRS output:** Tip=DIT, Ring=DAH, Sleeve=GND
-* **CR2032 coin cell powered**
-* **Optional “radio-powered” behavior** when the connected device provides pull-ups on the key lines (harvest path)
-* **ESD protection** on TRS lines and a **VDD clamp** for robustness
+* **3.5 mm TRS output:** Tip=DIT, Ring=DAH, Sleeve=GND
+* **CR2032 coin-cell powered**
+* **Optional radio-powered behavior** when the connected device provides pull-ups on the key lines
+* **ESD protection** on the TRS lines
+* **VDD clamp** for additional protection
+* Compact and lightweight design intended for portable operation
 
-## How it works (high level)
+## How it works
 
-* Each pad is sensed by a capacitive touch controller.
+* Each touch pad is sensed by a capacitive-touch controller.
 * When touched, the controller drives a MOSFET gate.
-* The MOSFET pulls **TIP** (DIT) or **RING** (DAH) to **GND**.
+* The MOSFET pulls **TIP** for DIT or **RING** for DAH to **GND**.
 
 ## Power modes
 
-* **ON (switch enabled):** coin cell supplies a stable VDD rail.
-* **OFF (switch disabled):** battery is disconnected; however, if plugged into a radio/keyer with pull-ups, the circuit can be weakly back-powered through the protection/harvest network unless the design includes full “off isolation.”
+* **ON:** the coin cell supplies a stable VDD rail.
+* **OFF:** the battery is disconnected. If the key remains connected to some radios or keyers, however, the key lines may weakly back-power the internal circuitry through the protection/harvesting network unless full OFF isolation is incorporated.
 
-### Known v1 behavior (important)
+### Known v1 behavior
 
-Some radios/keyers provide pull-ups on TIP/RING. With the current Touch architecture, when the unit is **OFF but plugged in**, the key lines can feed a small amount of current into the internal rail via the line-to-VDD paths. That can result in odd keyer behavior on certain rigs (example: alternating dit/dah) until the unit is turned ON or unplugged.
+Some radios and external keyers provide pull-ups on TIP and RING. With the current Touch architecture, leaving the unit **OFF but plugged in** can allow a small amount of current to enter the internal rail through the line-to-VDD circuitry. On certain radios this can result in unusual keyer behavior, including unintended alternating dits and dahs.
 
-**Mitigations**
+### Mitigations
 
-* Operational: leave the unit **ON when plugged in**, or unplug when OFF.
-* Hardware (v2 idea): add true “off isolation” for TIP/RING (or gate the harvest path) so OFF is electrically dead.
+* Leave the Chickadee Touch **ON while connected**.
+* Unplug the key when switched OFF.
+* A future revision can add true TIP/RING isolation or disable the harvesting path when switched OFF.
 
-## Recommended parts (summary)
+## Recommended parts
 
-* Capacitive controller: **AT42QT1011** (x2)
-* Output switch: **2N7002** (x2) or similar small NMOS
-* Pad network: 22k series to SNSK + ~2.2nF between SNS/SNSK (tunable)
-* Decoupling: 0.1µF at each IC
-* Bulk reservoir: **47–100µF** on VDD (package typically 1206/1210)
-* Protection: ESD steering on TIP/RING + VDD clamp to GND
+* Capacitive controller: **AT42QT1011** ×2
+* Output MOSFET: **2N7002** ×2
+* Pad network: 22k series resistance to SNSK
+* Sense capacitor: approximately 2.2 nF between SNS and SNSK
+* Local decoupling: 0.1 µF at each touch controller
+* Bulk capacitance: approximately 47–100 µF on VDD
+* ESD steering on TIP/RING
+* VDD clamp to GND
 
-## Layout notes (why it works reliably)
+## Layout notes
 
-* Keep **SNS/SNSK routing short** and away from TIP/RING and MOSFET drains.
-* Avoid **GND plane under the touch pads** (use keepouts).
-* Place **ESD + VDD clamp + bulk cap** near the TRS connector entry.
-* Remove **paste** from touch pads and battery contact pads (copper + mask opening only).
+* Keep **SNS/SNSK routing short**.
+* Keep touch-sense traces away from TIP/RING and the MOSFET drain traces.
+* Avoid a **ground plane underneath the touch pads**.
+* Use ground keepouts around sensitive SNS/SNSK routing.
+* Place **ESD protection, VDD clamp, and bulk capacitance near the TRS connector**.
+* Touch pads should use exposed copper with solder-mask opening and **no solder paste**.
 
-## Troubleshooting
+## Buy the Chickadee Touch
 
-* **False triggering / too sensitive:** increase the SNS/SNSK capacitor value slightly (example: 3.3nF).
-* **Not sensitive enough:** reduce the SNS/SNSK capacitor value (example: 1.0–1.5nF), increase pad area, or expand ground keepout.
-* **Weird behavior when OFF but plugged in:** use the mitigations above; consider v2 off-isolation.
+https://turkeyboards.com/products/chickadee-touch-iambic-morse-code-key
 
 ---
 
@@ -90,24 +159,32 @@ Some radios/keyers provide pull-ups on TIP/RING. With the current Touch architec
 
 ## What it is
 
-A **single-button straight key** designed for maximum simplicity and compatibility. Its extremely light weight and durable. It uses standard keyboard parts which makes it easy to repair and give a long lifetime.
+The **Chickadee Tap** is a single-button straight Morse key designed for maximum simplicity and portability. It uses standard mechanical keyboard components, making it lightweight, durable, inexpensive, and easy to repair.
 
 ## Wiring to TRS
 
-For broad compatibility with rigs that treat TRS as a paddle input:
+For radios using a conventional key/paddle TRS input:
 
-* **Sleeve (S) → GND**
-* **Tip (T) → Key line**
-* **Ring (R) → Not connected** (optional jumper if you find your radio doesn't follow the standard.)
+* **Sleeve → GND**
+* **Tip → Key**
+* **Ring → Not connected**
+
+An optional jumper can be used where compatibility with non-standard equipment is desired.
 
 Button wiring:
 
-* One side of the button → **Tip**
-* Other side of the button → **Sleeve (GND)**
+* One switch contact → **Tip**
+* Other switch contact → **Sleeve / GND**
 
 ## Power
 
-None required. This is a passive closure to ground.
+None required.
+
+The Chickadee Tap is a completely passive switch closure to ground.
+
+## Buy the Chickadee Tap
+
+https://turkeyboards.com/products/chickadee-tap
 
 ---
 
@@ -115,47 +192,247 @@ None required. This is a passive closure to ground.
 
 ## What it is
 
-An iambic key using standard mechianical keyboard parts which make it extremely light weight and durable.
+The **Chickadee Double Tap** is a compact iambic Morse paddle using standard mechanical keyboard switches. The design combines very low weight with durable and easily replaceable switching components.
 
 ## Wiring to TRS
 
-For broad compatibility with rigs that treat TRS as an iambic paddle input:
+* **Sleeve → GND**
+* **Tip → DIT or DAH**
+* **Ring → DAH or DIT**
 
-* **Sleeve (S) → GND**
-* **Tip (T) → Key 1 Line**
-* **Ring (R) → Key 2 Line**
-
-Switch wiring:
-
-* Allows you to flip Key 1 and Key 2 wiring to the TRS connector
+A built-in selector switch allows the Tip and Ring assignments to be reversed without rewiring the key. This makes it easy to accommodate operator preference or radio configurations where paddle orientation differs.
 
 ## Power
 
-None required. This is a passive closure to ground.
+None required.
+
+The Chickadee Double Tap is completely passive and simply closes the selected key line to ground.
+
+## Buy the Chickadee Double Tap
+
+https://turkeyboards.com/products/chickadee-double-tap-iambic-morse-code-key
 
 ---
 
-# Compatibility notes (ham radios & keyers)
+# Chickadee Chirp
 
-Most modern rigs and external keyers treat paddle inputs as:
+## What it is
 
-* internally pulled up,
-* and expect a switch closure to ground.
+The **Chickadee Chirp** is an ultra-portable push-to-talk microphone designed for portable amateur-radio operation.
 
-**Always verify the radio/keyer jack type**:
+It is based on the excellent **K6ARK Mini Mic** project by Adam, K6ARK:
 
-* Some radios have separate jacks for “KEY” vs “PADDLE”
-* Some menu settings choose “straight key” vs “paddle”
+https://k6ark.com/mini-mic-build-instructions/
+
+K6ARK's work demonstrated a simple and extremely compact microphone/PTT arrangement that is particularly well suited to portable radios.
+
+The Chickadee Chirp builds on that concept with TurkeyBoards' own mechanical design and adds a **built-in selector switch** that allows the microphone and PTT connections to be swapped between two common portable-radio wiring arrangements. This means one microphone can be used with several different radios without carrying separate adapters or rewiring cables.
+
+## Key features
+
+* Compact electret microphone
+* Mechanical keyboard-switch PTT
+* Positive tactile PTT feel
+* Selectable microphone/PTT wiring
+* No internal battery
+* No firmware
+* No active controls
+* Lightweight and field-serviceable design
+
+## Compatible radios
+
+The Chickadee Chirp is designed for radios using the supported 3.5 mm electret microphone/PTT wiring arrangements, including:
+
+* **QRP Labs QMX**
+* **QRP Labs QMX+**
+* **(tr)uSDX**
+* **uSDX and compatible variants**
+* **BG2FX FX-4CR**
+* **Elecraft KX2**
+* **Elecraft KX3**
+
+Other radios using the same microphone/PTT arrangements may also be compatible. Always verify the radio's microphone connector pinout before connecting equipment that has not already been tested.
+
+## Why the selector switch matters
+
+Portable radios do not all use the same Tip/Ring assignment for microphone audio and PTT. The Chickadee Chirp includes a selector that swaps those functions, allowing the same microphone to support both common arrangements.
+
+Instead of carrying:
+
+* two microphones,
+* custom cables,
+* or separate adapters,
+
+the operator can simply change the selector position.
+
+## Intended use
+
+The Chickadee Chirp is especially well suited for:
+
+* POTA
+* SOTA
+* QRP operation
+* portable HF operation
+* field communications
+* emergency go kits
+* travel
+* compact shack installations
+
+## Power
+
+No internal battery is required.
+
+The electret microphone receives its required bias from the connected radio, while the mechanical PTT switch provides the appropriate transmit-control connection.
+
+## Buy the Chickadee Chirp
+
+https://turkeyboards.com/products/chickadee-chirp
 
 ---
 
-# Contributing
+# Chickadee Chirp Mini
 
-PRs welcome:
+## What it is
 
-* footprint alternatives for hard-to-source TRS jacks
-* v2 improvements for Touch “true OFF isolation”
-* enclosure / ergonomic pad shape experiments
-* tested radio compatibility notes (rig model + settings)
+The **Chickadee Chirp Mini** is the smallest version of the Chickadee portable microphone.
+
+It is also based on **Adam, K6ARK's Mini Mic project**:
+
+https://k6ark.com/mini-mic-build-instructions/
+
+The Chirp Mini carries the same inspiration forward in an even smaller TurkeyBoards form factor while retaining the selectable microphone/PTT wiring introduced in the Chickadee Chirp. It is intended for operators who want to carry the smallest and lightest microphone practical. Like the full-size Chirp, it uses an electret microphone, mechanical keyboard-switch PTT, and selectable microphone/PTT wiring.
+
+## Key features
+
+* Extremely compact design
+* Electret microphone
+* Mechanical keyboard-switch PTT
+* Selectable microphone/PTT wiring
+* No battery
+* No firmware
+* Lightweight and durable
+* Easily repairable using standard keyboard-switch components
+
+## Compatible radios
+
+The Chickadee Chirp Mini supports the same radio families as the full-size Chirp, including:
+
+* **QRP Labs QMX**
+* **QRP Labs QMX+**
+* **(tr)uSDX**
+* **uSDX and compatible variants**
+* **BG2FX FX-4CR**
+* **Elecraft KX2**
+* **Elecraft KX3**
+
+Other radios using one of the same supported 3.5 mm microphone/PTT arrangements may also work.
+
+## Chirp vs. Chirp Mini
+
+Both models provide the same fundamental functionality.
+
+Choose the **Chirp** if you prefer:
+
+* slightly more physical size
+* easier handling
+* a more conventional handheld feel
+
+Choose the **Chirp Mini** if your priorities are:
+
+* minimum size
+* minimum weight
+* ultralight POTA or SOTA kits
+* backpacking
+* compact emergency kits
+* extremely small travel setups
+
+## Power
+
+No internal battery is required.
+
+The microphone element is powered by the connected radio.
+
+## Buy the Chickadee Chirp Mini
+
+https://turkeyboards.com/products/chickadee-chirp-mini
 
 ---
+
+# Morse key TRS convention
+
+The default Chickadee Morse-key convention is:
+
+> **Tip = DIT**
+> **Ring = DAH**
+> **Sleeve = GND**
+
+For the Chickadee Tap, Tip is normally used as the straight-key line while Ring remains unused.
+
+---
+
+# Compatibility notes
+
+## Morse keys
+
+Most modern radios and external keyers:
+
+* internally pull the paddle/key inputs high,
+* and detect a switch closure to ground.
+
+Always verify the radio or keyer's connector and settings.
+
+Some radios provide separate:
+
+* **KEY**
+* **PADDLE**
+
+connections, while others use software/menu settings to determine whether the input is treated as a straight key or iambic paddle.
+
+## Chirp microphones
+
+Microphone/PTT connector wiring is less standardized than CW paddle wiring.
+
+Before connecting an untested radio:
+
+* verify that it uses a compatible electret microphone,
+* verify the Tip/Ring/Sleeve assignment,
+* verify the microphone-bias arrangement,
+* and verify that PTT is activated using the expected contact closure.
+
+The Chirp selector accommodates the two wiring arrangements used by the supported radio families but should not be assumed to make every 3.5 mm microphone jack compatible.
+
+---
+
+# Design philosophy
+
+The Chickadee family is built around a few common goals:
+
+* **Portable**
+* **Lightweight**
+* **Durable**
+* **Simple**
+* **Repairable**
+* **Inexpensive to manufacture**
+* **Compatible with commonly available parts**
+
+Mechanical Chickadee products make extensive use of standard keyboard switches because they are inexpensive, readily available, provide excellent tactile feedback, have long service lives, and are easy to replace. The goal is to create radio accessories that are easy to throw into a field kit without adding unnecessary weight, complexity, or proprietary components.
+
+---
+
+# Credits
+
+The Chickadee family would not exist in its current form without the work shared by other amateur-radio builders.
+
+**M0UKD**
+Capacitive CW Touch Key Circuits
+https://m0ukd.com/homebrew/capacitive-cw-touch-key-circuits/
+
+The Chickadee Touch is based on and inspired by M0UKD's capacitive-touch CW key work.
+
+**Adam, K6ARK**
+Mini Mic Build Instructions
+https://k6ark.com/mini-mic-build-instructions/
+
+The Chickadee Chirp and Chickadee Chirp Mini are based on and inspired by K6ARK's Mini Mic project.
+
+TurkeyBoards extends these ideas with its own PCB layouts, enclosures, production design, switching arrangements, protection circuitry, and other implementation changes. We are grateful to both builders for openly documenting and sharing their work with the amateur-radio community.
